@@ -1,0 +1,21 @@
+# Hello World program in Python
+import math
+#print "Hello World!\n"
+firstnum=1
+count=1
+factors=0
+
+while(factors<=500):
+    factors = 0
+    count=count+1
+    firstnum = firstnum+count
+    for x in range(1, int(math.ceil(math.sqrt(firstnum)))):
+        if firstnum % x == 0:
+            factors = factors+1
+            if firstnum / x != x:
+                factors = factors+1
+            
+print "num "
+print firstnum 
+print " num factors " 
+print factors
