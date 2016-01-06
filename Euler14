@@ -1,0 +1,29 @@
+import math
+length = 0
+bestlen=0
+bestnum=0
+current=1
+start =1
+
+while start<1000000:
+    while current >1:
+        if current %2 ==0: 
+            current = (current/2)
+           # print "here"
+        elif current%2==1:
+            current = ((3*current)+1)
+        length = length+1
+    if length>bestlen:
+        bestlen=length
+        bestnum=start
+        
+    #print start
+    start=start+1
+    current=start
+    length=0
+    
+    
+print "end"
+print bestlen
+print bestnum
+print start
