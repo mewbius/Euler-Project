@@ -1,0 +1,55 @@
+# Hello World program in Python
+    
+import math
+
+def order(z):
+    ent = str(z)
+    check = True
+    if len(ent) >=3:
+        for u in range(0,len(ent)-1):
+            #print str(int(ent[-1*u])) +" "+ str(int(ent[(-1*u)+1]))
+            if int(ent[u:u+1]) < int(ent[u+1:u+2]):
+                check = False
+                #print "no  "+z
+            #else:
+                #print "yay" + z
+        return check
+    else:
+        return False
+
+def perm(x):
+    this = str(x)
+    string = ""
+    if len(this) > 5:
+        print this
+    if len(this)==1:
+        return x
+    else:
+        for f in range(0, len(this)):
+            
+            newlist = str(perm(this[0:f]+this[f+1:])).split()
+            #print "newlist"
+            #print newlist
+            for j in range(0, len(newlist)):
+                string =  string +str(this[f:f+1])+str(newlist[j])+" "
+                #print "here"
+            #string= str(this[f:f+1])+" "+str(perm(this[0:f]+this[f+1:]))#+" "
+        return string   
+
+test = False
+
+if test:
+    listans = perm("013456789")
+    file = open("Newfile.py","r+")
+    file.write(listans)
+    file.flush()
+#print listans
+g = open("Newfile.py","r")
+newlist = g.readlines()
+list1 = str(newlist).split()#len(newlist.split())
+print list1[int(1000000-362880-362880)-1]
+#print listans.split()[0]+" 1"
+#print listans.split()[1]+ " 2 "
+#print listans.split()[-1]+" last"
+#print (listans.split()[1000000])
+#print len(listans.split())
