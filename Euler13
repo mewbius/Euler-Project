@@ -1,0 +1,17 @@
+import math
+with open ("Newfile.py", "r") as myfile:
+    data=myfile.readlines()#.replace('\n','')
+nums = []
+for i in range(len(data)):
+    #data[i].replace('\n', '')
+    holder = data[i][0:50]
+    holder.replace('\n', '').strip()
+    nums.append(int(holder))
+    
+sum=0
+
+for j in range(len(nums)):
+    sum=sum+int(nums[j])
+    print sum
+    print nums[j]
+print str(sum)[0:10]
