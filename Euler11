@@ -1,0 +1,61 @@
+import math
+with open ("Newfile.py", "r") as myfile:
+    data=myfile.readlines()#.replace('\n','')
+nums = []
+for i in range(len(data)):
+    #data[i].replace('\n', '')
+    holder = (data[i].split(" "))
+    #holder.split(" ")
+    nums.append((holder))
+    
+sum0 = 0
+sum1 =0
+sum2=0
+sum3=0
+sum4=0
+num1=0
+which = 0
+for j in range(0,20):
+    for k in range(0,20):
+        if(k <=16):
+            check = int(nums[j][k])*int(nums[j][k+1])*int(nums[j][k+2])*int(nums[j][k+3])
+            if check > sum1:
+                sum1 = check
+                sum1=check
+                check=0
+                num1 = nums[j][k]
+                which=1
+        if(j <=16):
+            check = int(nums[j][k])*int(nums[j+1][k])*int(nums[j+2][k])*int(nums[j+3][k])
+            if check > sum2:
+                sum2 = check
+                sum2=check
+                check =0
+                num1 = nums[j][k]
+                which=2
+        if(j<=16 and k<=16):
+            check = int(nums[j][k])*int(nums[j+1][k+1])*int(nums[j+2][k+2])*int(nums[j+3][k+3])
+            if check > sum3:
+                sum3 = check
+                sum3=check
+               
+                check = 0
+                num1 = nums[j][k]
+                which=3
+        if(j>=3 and k <=16):
+            check = int(nums[j][k])*int(nums[j-1][k+1])*int(nums[j-2][k+2])*int(nums[j-3][k+3])
+            
+            if check > sum4:
+                sum4 = check
+                sum4=check
+                print check
+                check = 0
+                num1 = nums[j][k]
+                which=4
+print sum0
+print num1
+print which
+print sum1
+print sum2
+print sum3
+print sum4
