@@ -1,0 +1,15 @@
+import math
+
+prod = 1
+for j in range(1,101):
+    prod = prod *j
+
+var = str(prod)
+sum=0
+nums = []
+
+for i in range(0, len(var)):
+    nums.append(var[i:i+1])
+    print var[i:i+1]
+    sum=sum+int(var[i:i+1])
+print sum
